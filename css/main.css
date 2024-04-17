@@ -10,31 +10,16 @@ body {
     font-size: 24px;
     padding-left: 15px;
 }
-@media screen and (max-width: 600px) {
-    .logo {
-      float: none;
-      display: inline-block;
-      margin-right: 0;
-    }
-}
 
 .navbar {
     float: right;
-    padding: 5px
-}
-
-@media screen and (max-width: 600px) {
-    .navbar {
-      float: none;
-      margin-top: 10px;
+    padding: 5px;
+    a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 10px;
+        margin-right: 10px;
     }
-}
-
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 header {
@@ -47,13 +32,25 @@ header {
 }
 
 @media screen and (max-width: 600px) {
+    .logo {
+      float: none;
+      display: inline-block;
+      margin-right: 0;
+    }
+
+    .navbar {
+        float: none;
+        margin-top: 10px;
+    }
+
     header {
         position: relative;
         text-align: center;
         height:80px;
         padding: 10px;
     }
-} 
+}
+
 
 /*Das ist die Hero Section*/
 
@@ -61,37 +58,40 @@ header {
     margin: 15px;
     display: flex; /* Flexbox-Layout verwenden */
     align-items: center; /* Vertikal zentrieren */
-}
-.hero-section img {
-    width: 60%; /* Breite des Bildes */
-    height: auto; /* Höhe automatisch anpassen */
-    margin-right: 20px; /* Abstand zwischen Bild und Text */
-    border-radius: 40px; /* Setze den Eckenradius auf 50% für einen Kreis */
-    overflow: hidden; /* Verhindere, dass Bild über den Rahmen hinausragt */
-}
-.hero-section p{
-    width: 40%
-}
-.hero-section p span.special {
-    font-size: 1.5em;
+
+    img{
+        width: 60%; /* Breite des Bildes */
+        height: auto; /* Höhe automatisch anpassen */
+        margin-right: 20px; /* Abstand zwischen Bild und Text */
+        border-radius: 40px; /* Setze den Eckenradius auf 50% für einen Kreis */
+        overflow: hidden; /* Verhindere, dass Bild über den Rahmen hinausragt */
+    }
+
+    p {
+        width: 40%;
+
+        span .special{
+            font-size: 1.5em;
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
     .hero-section{
         display: block; /* Das Bild als Blockelement behandeln */
         margin: 0 auto; /* Zentriere das Bild horizontal */
-    }
-    
-    .hero-section img{
-        width: 100%;
-        margin-right: 0px;
-        border-radius: 0;
-    }
+        
+        img{
+            width: 100%;
+            margin-right: 0px;
+            border-radius: 0;
+        }
 
-    .hero-section p{
-        width:auto;
-        margin-left: 15px;
-        margin-top: 0;
+        p{
+            width:auto;
+            margin-left: 15px;
+            margin-top: 0;
+        }
     }
 }
 
@@ -100,26 +100,22 @@ header {
         display: block;
         text-align: center;
         margin-top: 0.6%;
-    }
-    .hero-section img{
-        margin:0 auto;
-        width: 95vw;
-        height:40vw;
-        object-fit: cover;
-        border-radius: 20px;
-        object-position: 50% 15%;
-    }
+        
+        img{
+            margin:0 auto;
+            width: 95vw;
+            height:40vw;
+            object-fit: cover;
+            border-radius: 20px;
+            object-position: 50% 15%;
+        }
 
-    .hero-section p{
-        width: 100%;
+        p{
+            width: 100%;
+        }
     }
 }
 
-/*Das ist die About us Section*/
-
-.about-us{
-    margin-left: 15px;
-}
 
 /*Hier beginnt die Products section*/
 
@@ -129,6 +125,26 @@ header {
 
 .special-list {
     list-style-type: none; /* Auszählungspunkte entfernen */
+
+    
+    .list-item-1::before{
+        content: "\1F40D"; /* Unicode für das Emoji */
+    }
+    .list-item-2::before{
+        content: "\1F525"; /* Unicode für das Emoji */
+    }
+    .list-item-3::before{
+        content: "\1F329"; /* Unicode für das Emoji */
+    }
+    .list-item-4::before{
+        content: "\1F409"; /* Unicode für das Emoji */
+    }
+    
+    li::before {
+        display: inline-block;
+        margin-right: 0.5em; /* Abstand zwischen dem Emoji und dem Listenpunkt */
+        font-size: 20px;
+    }
 }
 
 @media screen and (min-width: 900px) {
@@ -139,36 +155,14 @@ header {
     }
 }
 
-.special-list li::before {
-    display: inline-block;
-    margin-right: 0.5em; /* Abstand zwischen dem Emoji und dem Listenpunkt */
-    font-size: 20px;
-}
-
 @media  screen and (min-width: 600px) {
     .special-list{
         font-size: 1.25em;
+    
+        li::before{
+            font-size: 25px;
+        }
     }
-
-    .special-list li::before{
-        font-size: 25px;
-    }
-}
-
-.special-list li.list-item-1::before{
-    content: "\1F40D"; /* Unicode für das Flammen-Emoji */
-}
-
-.special-list li.list-item-2::before{
-    content: "\1F525"; /* Unicode für das Flammen-Emoji */
-}
-
-.special-list li.list-item-3::before{
-    content: "\1F329"; /* Unicode für das Flammen-Emoji */
-}
-
-.special-list li.list-item-4::before{
-    content: "\1F409"; /* Unicode für das Flammen-Emoji */
 }
 
 /*Hier beginnt die Reference Section*/
@@ -178,20 +172,20 @@ header {
     margin-right: 15px;
 }
 
-.pesant{
-    background-image: linear-gradient(to bottom right, #4a9af5, #128103ef);
-    color:#27006e;
-}
-
-.king{
-    background-image: linear-gradient(to bottom right, #b31375, #bfcc09ce);
-    color:#27006e;
-}
-
-.witch{
-
-    background-image: linear-gradient(to bottom right, #5d0299, #770202);
-    color:inherit;
+.reviews{
+    .pesant{
+        background-image: linear-gradient(to bottom right, #4a9af5, #128103ef);
+        color:#27006e;
+    }
+    
+    .king{
+        background-image: linear-gradient(to bottom right, #b31375, #bfcc09ce);
+        color:#27006e;
+    }
+    
+    .witch{
+        background-image: linear-gradient(to bottom right, #5d0299, #770202);
+    }
 }
 
 .person-profile{
@@ -202,26 +196,26 @@ header {
     grid-template-areas: 
     'img title'
     'img info';
-}
 
-.person-profile img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px;
-    grid-area: img;
-    align-self: center;
-}
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+        grid-area: img;
+        align-self: center;
+    }
 
-.person-profile h2{
-    grid-area: title;
-    margin-bottom: 0;
-}
-
-.person-profile p{
-    margin-top: 5px;
-    grid-area: info;
+    h2 {
+        grid-area: title;
+        margin-bottom: 0;
+    }
+    
+    p{
+        margin-top: 5px;
+        grid-area: info;
+    }
 }
 
 @media screen and (min-width:900px){
@@ -241,62 +235,73 @@ header {
 
 /*Hier beginnt die portfolio section*/
 
-.portfolio p span.special {
-    font-size: 1.25em;
-}
-
 .portfolio {
     margin: 15px;
+    
+    p span.special {
+        font-size: 1.25em;
+    }
 }
 
 .story {
     position: relative; /* Positionierung relativ zum übergeordneten Element */
     display: inline-block; /* Bilder nebeneinander anzeigen */
-}
-  
-.story img {
+    
+    img {
     display: block; /* Das Bild als Blockelement behandeln */
     width: 90vw; /* Breite des Bildes */
     height: 67.5vw; /* Höhe des Bildes */
     object-fit: cover; /* Proportionales Zuschneiden, um den Container zu füllen */
     object-position: 50% 20%; /* Position des Bildausschnitts (horizontal, vertikal) */
-}
-  
-.story .story-text {
-    position: absolute; /* Positionierung absolut innerhalb des Containers */
-    bottom: 0; /* Abstand zum unteren Rand des Containers */
-    left: 0; /* Ausrichtung am linken Rand des Containers */
-    background-color: rgba(0, 0, 0, 0.5); /* Hintergrundfarbe des Textes */
-    color: white; /* Textfarbe */
-    padding: 10px; /* Innenabstand */
-    width: 100%; /* Breite des Textcontainers */
-    box-sizing: border-box; /* Box-Modell: Der Innenabstand wird in die Breite einberechnet */
-    font-size: 1.25em;
+    }
+
+    .story-info {
+        position: absolute; /* Positionierung absolut innerhalb des Containers */
+        bottom: 0; /* Abstand zum unteren Rand des Containers */
+        left: 0; /* Ausrichtung am linken Rand des Containers */
+        background-color: rgba(0, 0, 0, 0.5); /* Hintergrundfarbe des Textes */
+        color: white; /* Textfarbe */
+        padding: 10px; /* Innenabstand */
+        width: 100%; /* Breite des Textcontainers */
+        box-sizing: border-box; /* Box-Modell: Der Innenabstand wird in die Breite einberechnet */
+        font-size: 1.25em;
+        
+        h2{
+            margin: 0;
+        }
+        
+        p{
+            margin: 0;
+            margin-top: 2%;
+        }
+    }
 }
 
 @media screen and (min-width: 900px) {
     .story-section {
         width: 100%;
         display:flex;
-    }
-    
-    .story-section div{
+        
+        div{
         flex-grow: 1; /* Jedes Unterobjekt wächst, um die verfügbare Breite auszufüllen */
+        }
     }
 
-    .story img{
-        width: 30vw;
-        height: 22.5vw;
-    }
+    .story{
+        img{
+            width: 30vw;
+            height: 22.5vw;
+        }
 
-    .story .story-text{
-        font-size: 0.9em;
-        width: 30vw
+        .story-info{
+            font-size: 0.9em;
+            width: 30vw;
+        }
     }
 }
 
 @media screen and (max-width: 600px) {
-    .story .story-text{
+    .story .story-info{
         font-size: 1em;
     }
 }
@@ -324,22 +329,25 @@ footer{
 .other-links{
     display: flex; /* Flexbox verwenden, um die Links nebeneinander anzuordnen */
     justify-content:space-around; /* Die Links am Ende des Footers ausrichten */
+
+    a{
+        text-decoration: none; /* Die Unterstreichung entfernen */
+        color: inherit; /* Die Farbe des Textes festlegen */
+        
+        &:hover{
+            opacity: 0.2;
+        }
+    }
 }
 
-.other-links a {
-    text-decoration: none; /* Die Unterstreichung entfernen */
-    color: inherit; /* Die Farbe des Textes festlegen */
+.social-media{
+    img {
+        width: 50px;
+    }
+    
+    table {
+        width: 100%;
+        text-align: center center;
+    }
 }
 
-.other-links a:hover{
-    opacity: 0.2;
-}
-
-.social-media img {
-    width: 50px;
-}
-
-.social-media table {
-    width: 100%;
-    text-align: center center;
-}
