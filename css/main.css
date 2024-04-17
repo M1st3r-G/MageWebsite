@@ -248,11 +248,11 @@ header {
     display: inline-block; /* Bilder nebeneinander anzeigen */
     
     img {
-    display: block; /* Das Bild als Blockelement behandeln */
-    width: 90vw; /* Breite des Bildes */
-    height: 67.5vw; /* Höhe des Bildes */
-    object-fit: cover; /* Proportionales Zuschneiden, um den Container zu füllen */
-    object-position: 50% 20%; /* Position des Bildausschnitts (horizontal, vertikal) */
+        display: block; /* Das Bild als Blockelement behandeln */
+        width: 90vw; /* Breite des Bildes */
+        height: 67.5vw; /* Höhe des Bildes */
+        object-fit: cover; /* Proportionales Zuschneiden, um den Container zu füllen */
+        object-position: 50% 20%; /* Position des Bildausschnitts (horizontal, vertikal) */
     }
 
     .story-info {
@@ -279,23 +279,52 @@ header {
 
 @media screen and (min-width: 900px) {
     .story-section {
-        width: 100%;
         display:flex;
-        
-        div{
-        flex-grow: 1; /* Jedes Unterobjekt wächst, um die verfügbare Breite auszufüllen */
-        }
+        justify-content: center;
+        align-items: center;
+        margin: 0 2.5vmin;
+        transform: skew(5deg);
+        gap: 1.5%;
     }
 
     .story{
+        flex: 1;
+        transition: all 1s ease-in-out;
+        height: 50vmin;
+        position: relative;
+
         img{
-            width: 30vw;
-            height: 22.5vw;
+            width: 100%;
+            height: 100%;
+            object-position: 50% 50%;
+            object-fit: cover;
+            transition: all 1s ease-in-out;
+            filter: grayscale(100);
         }
 
         .story-info{
+            opacity: 0;
             font-size: 0.9em;
             width: 30vw;
+            transition: opacity 0s ease-out;
+
+            h2{
+                transform: skew(-5deg);
+            }
+        }
+
+        &:hover{
+            flex-grow: 10;
+            
+            img{
+                filter: grayscale(0);
+            }
+            
+            .story-info{
+                opacity: 1;
+                width: 100%;
+                transition: opacity 1s ease-in;
+            }
         }
     }
 }
@@ -350,4 +379,3 @@ footer{
         text-align: center center;
     }
 }
-
