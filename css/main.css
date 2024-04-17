@@ -5,52 +5,69 @@ body {
 }
 
 /*Das ist der Header*/
-.logo {
-    float: left;
-    font-size: 24px;
-    padding-left: 15px;
-}
+header {
+    display: flex;
+    position: sticky; /* Der Header bleibt am Bildschirmrand haften */
+    
+    top: 0; /* Der Header bleibt immer oben auf dem Bildschirm */
+    height: 5vh; /**/
+    z-index: 100;
 
-.navbar {
-    float: right;
-    padding: 5px;
-    a {
-        color: #fff;
-        text-decoration: none;
-        margin-left: 10px;
-        margin-right: 10px;
+    background-color: #111;
+    color: hsl(0, 0%, 100%);
+
+    .navbar {
+        flex: 9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-right: 2vh;
+        margin-left: 2vh;
+
+        a {
+            font-size: 3vw;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    .logo {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-left: 1vh;
+        
+        img{
+            filter: invert(100);
+            position: relative;
+            object-fit: cover;
+            height: 80%;
+            width: auto;
+        }
     }
 }
 
-header {
-    position: sticky; /* Der Header bleibt am Bildschirmrand haften */
-    top: 0; /* Der Header bleibt immer oben auf dem Bildschirm */
-    background-color: #111;
-    color: #fff;
-    height: 30px;
-    z-index: 100;
+@media screen and (min-width: 900px) {
+    header .navbar a{
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .logo {
-      float: none;
-      display: inline-block;
-      margin-right: 0;
-    }
-
-    .navbar {
-        float: none;
-        margin-top: 10px;
-    }
-
-    header {
-        position: relative;
-        text-align: center;
-        height:80px;
-        padding: 10px;
+    header .navbar{
+        margin: 5px;
+        margin-left: 10px;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        
+        a{
+            font-size: 100%;
+        }
     }
 }
-
 
 /*Das ist die Hero Section*/
 
@@ -120,30 +137,30 @@ header {
 /*Hier beginnt die Products section*/
 
 .products{
-    margin-left: 15px
-}
+    margin-left: 15px;
 
-.special-list {
-    list-style-type: none; /* Auszählungspunkte entfernen */
-
+    .special-list {
+        list-style-type: none; /* Auszählungspunkte entfernen */
     
-    .list-item-1::before{
-        content: "\1F40D"; /* Unicode für das Emoji */
-    }
-    .list-item-2::before{
-        content: "\1F525"; /* Unicode für das Emoji */
-    }
-    .list-item-3::before{
-        content: "\1F329"; /* Unicode für das Emoji */
-    }
-    .list-item-4::before{
-        content: "\1F409"; /* Unicode für das Emoji */
-    }
-    
-    li::before {
-        display: inline-block;
-        margin-right: 0.5em; /* Abstand zwischen dem Emoji und dem Listenpunkt */
-        font-size: 20px;
+        
+        .list-item-1::before{
+            content: "\1F40D"; /* Unicode für das Emoji */
+        }
+        .list-item-2::before{
+            content: "\1F525"; /* Unicode für das Emoji */
+        }
+        .list-item-3::before{
+            content: "\1F329"; /* Unicode für das Emoji */
+        }
+        .list-item-4::before{
+            content: "\1F409"; /* Unicode für das Emoji */
+        }
+        
+        li::before {
+            display: inline-block;
+            margin-right: 0.5em; /* Abstand zwischen dem Emoji und dem Listenpunkt */
+            font-size: 20px;
+        }
     }
 }
 
@@ -170,51 +187,50 @@ header {
 .references{
     margin-left: 15px;
     margin-right: 15px;
-}
-
-.reviews{
-    .pesant{
-        background-image: linear-gradient(to bottom right, #4a9af5, #128103ef);
-        color:#27006e;
-    }
-    
-    .king{
-        background-image: linear-gradient(to bottom right, #b31375, #bfcc09ce);
-        color:#27006e;
-    }
-    
-    .witch{
-        background-image: linear-gradient(to bottom right, #5d0299, #770202);
-    }
-}
-
-.person-profile{
-    display: grid;
-    padding: 15px;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    grid-template-areas: 
-    'img title'
-    'img info';
-
-    img{
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 20px;
-        grid-area: img;
-        align-self: center;
-    }
-
-    h2 {
-        grid-area: title;
-        margin-bottom: 0;
-    }
-    
-    p{
-        margin-top: 5px;
-        grid-area: info;
+    .reviews{
+        .pesant{
+            background-image: linear-gradient(to bottom right, #4a9af5, #128103ef);
+            color:#27006e;
+        }
+        
+        .king{
+            background-image: linear-gradient(to bottom right, #b31375, #bfcc09ce);
+            color:#27006e;
+        }
+        
+        .witch{
+            background-image: linear-gradient(to bottom right, #5d0299, #770202);
+        }
+        
+        .person-profile{
+            display: grid;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            grid-template-areas: 
+            'img title'
+            'img info';
+        
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 20px;
+                grid-area: img;
+                align-self: center;
+            }
+        
+            h2 {
+                grid-area: title;
+                margin-bottom: 0;
+            }
+            
+            p{
+                margin-top: 5px;
+                grid-area: info;
+            }
+        }
     }
 }
 
@@ -240,7 +256,7 @@ header {
     
     p span.special {
         font-size: 1.25em;
-    }
+    } 
 }
 
 .story {
@@ -276,6 +292,7 @@ header {
         }
     }
 }
+
 
 @media screen and (min-width: 900px) {
     .story-section {
@@ -340,10 +357,10 @@ header {
 .contact{
     margin-left: 15px;
     margin-right: 15px;
-}
-
-.time{
-    color: #838383;
+    .time{
+        color: #838383;
+    }
+    
 }
 
 /*Hier beginnt der Footer*/
@@ -353,29 +370,29 @@ footer{
     background-color: #222; /* Hintergrundfarbe für den Footer festlegen */
     padding: 20px; /* Innenabstand für den Footer festlegen */
     box-sizing: border-box; /* Den Padding-Wert in die Gesamtbreite einbeziehen */
-}
 
-.other-links{
-    display: flex; /* Flexbox verwenden, um die Links nebeneinander anzuordnen */
-    justify-content:space-around; /* Die Links am Ende des Footers ausrichten */
-
-    a{
-        text-decoration: none; /* Die Unterstreichung entfernen */
-        color: inherit; /* Die Farbe des Textes festlegen */
-        
-        &:hover{
-            opacity: 0.2;
+    .other-links{
+        display: flex; /* Flexbox verwenden, um die Links nebeneinander anzuordnen */
+        justify-content:space-around; /* Die Links am Ende des Footers ausrichten */
+    
+        a{
+            text-decoration: none; /* Die Unterstreichung entfernen */
+            color: inherit; /* Die Farbe des Textes festlegen */
+            
+            &:hover{
+                opacity: 0.2;
+            }
         }
     }
-}
-
-.social-media{
-    img {
-        width: 50px;
-    }
     
-    table {
-        width: 100%;
-        text-align: center center;
+    .social-media{
+        img {
+            width: 50px;
+        }
+        
+        table {
+            width: 100%;
+            text-align: center center;
+        }
     }
 }
