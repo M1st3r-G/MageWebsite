@@ -7,10 +7,10 @@ body {
 /*Das ist der Header*/
 header {
     display: flex;
-    position: sticky; /* Der Header bleibt am Bildschirmrand haften */
+    position: sticky; 
     
-    top: 0; /* Der Header bleibt immer oben auf dem Bildschirm */
-    height: 5vh; /**/
+    top: 0; 
+    height: 5vh; 
     z-index: 100;
 
     background-color: #111;
@@ -73,15 +73,15 @@ header {
 
 .hero-section {
     margin: 15px;
-    display: flex; /* Flexbox-Layout verwenden */
-    align-items: center; /* Vertikal zentrieren */
+    display: flex; 
+    align-items: center; 
 
     img{
-        width: 60%; /* Breite des Bildes */
-        height: auto; /* Höhe automatisch anpassen */
-        margin-right: 20px; /* Abstand zwischen Bild und Text */
-        border-radius: 40px; /* Setze den Eckenradius auf 50% für einen Kreis */
-        overflow: hidden; /* Verhindere, dass Bild über den Rahmen hinausragt */
+        width: 60%;
+        height: auto; 
+        margin-right: 20px;
+        border-radius: 40px; 
+        overflow: hidden; 
     }
 
     p {
@@ -95,8 +95,8 @@ header {
 
 @media screen and (max-width: 600px) {
     .hero-section{
-        display: block; /* Das Bild als Blockelement behandeln */
-        margin: 0 auto; /* Zentriere das Bild horizontal */
+        display: block; 
+        margin: 0 auto; 
         
         img{
             width: 100%;
@@ -140,25 +140,25 @@ header {
     margin-left: 15px;
 
     .special-list {
-        list-style-type: none; /* Auszählungspunkte entfernen */
+        list-style-type: none; 
     
         
         .list-item-1::before{
-            content: "\1F40D"; /* Unicode für das Emoji */
+            content: "\1F40D"; 
         }
         .list-item-2::before{
-            content: "\1F525"; /* Unicode für das Emoji */
+            content: "\1F525"; 
         }
         .list-item-3::before{
-            content: "\1F329"; /* Unicode für das Emoji */
+            content: "\1F329"; 
         }
         .list-item-4::before{
-            content: "\1F409"; /* Unicode für das Emoji */
+            content: "\1F409"; 
         }
         
         li::before {
             display: inline-block;
-            margin-right: 0.5em; /* Abstand zwischen dem Emoji und dem Listenpunkt */
+            margin-right: 0.5em; 
             font-size: 20px;
         }
     }
@@ -167,8 +167,8 @@ header {
 @media screen and (min-width: 900px) {
     .special-list{
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Zwei Spalten mit gleicher Breite */
-            grid-gap: 10px; /* Optional: Abstand zwischen den Listenelementen */
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px; 
     }
 }
 
@@ -260,26 +260,26 @@ header {
 }
 
 .story {
-    position: relative; /* Positionierung relativ zum übergeordneten Element */
-    display: inline-block; /* Bilder nebeneinander anzeigen */
+    position: relative; 
+    display: inline-block; 
     
     img {
-        display: block; /* Das Bild als Blockelement behandeln */
-        width: 90vw; /* Breite des Bildes */
-        height: 67.5vw; /* Höhe des Bildes */
-        object-fit: cover; /* Proportionales Zuschneiden, um den Container zu füllen */
-        object-position: 50% 20%; /* Position des Bildausschnitts (horizontal, vertikal) */
+        display: block; 
+        width: 90vw; 
+        height: 67.5vw; 
+        object-fit: cover; 
+        object-position: 50% 20%; 
     }
 
     .story-info {
-        position: absolute; /* Positionierung absolut innerhalb des Containers */
-        bottom: 0; /* Abstand zum unteren Rand des Containers */
-        left: 0; /* Ausrichtung am linken Rand des Containers */
-        background-color: rgba(0, 0, 0, 0.5); /* Hintergrundfarbe des Textes */
-        color: white; /* Textfarbe */
-        padding: 10px; /* Innenabstand */
-        width: 100%; /* Breite des Textcontainers */
-        box-sizing: border-box; /* Box-Modell: Der Innenabstand wird in die Breite einberechnet */
+        position: absolute; 
+        bottom: 0; 
+        left: 0; 
+        background-color: rgba(0, 0, 0, 0.5); 
+        color: white; 
+        padding: 10px; 
+        width: 100%; 
+        box-sizing: border-box; 
         font-size: 1.25em;
         
         h2{
@@ -366,21 +366,27 @@ header {
 /*Hier beginnt der Footer*/
 
 footer{
-    width: 100%; /* Die gesamte Breite des Bildschirms einnehmen */
-    background-color: #222; /* Hintergrundfarbe für den Footer festlegen */
-    padding: 20px; /* Innenabstand für den Footer festlegen */
-    box-sizing: border-box; /* Den Padding-Wert in die Gesamtbreite einbeziehen */
+    width: 100%; 
+    background-color: #222; 
+    padding: 20px; 
+    box-sizing: border-box; 
 
     .other-links{
-        display: flex; /* Flexbox verwenden, um die Links nebeneinander anzuordnen */
-        justify-content:space-around; /* Die Links am Ende des Footers ausrichten */
+        display: flex; 
+        justify-content:space-around; 
     
         a{
-            text-decoration: none; /* Die Unterstreichung entfernen */
-            color: inherit; /* Die Farbe des Textes festlegen */
+            text-decoration: none; 
+            color: inherit; 
+            transition: text-shadow 0s ease-in-out;
             
             &:hover{
-                opacity: 0.2;
+                text-shadow: 0 0 10px #2e8fff, 
+                            0 0 20px #2e8fff, 
+                            0 0 30px #2e8fff, 
+                            0 0 40px #2e8fff, 
+                            0 0 50px #2e8fff; 
+                transition: text-shadow 1s ease-in-out;
             }
         }
     }
@@ -388,11 +394,24 @@ footer{
     .social-media{
         img {
             width: 50px;
+
+            &:hover{
+                animation: jiggle 1s linear infinite;
+            }
         }
-        
+
         table {
             width: 100%;
             text-align: center center;
         }
+    }
+}
+
+@keyframes jiggle {
+    0%, 100% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.2);
     }
 }
