@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <meta charset='utf-8'>
+    
+    <meta charset='utf-8'
     <title>Alric der Weise</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
@@ -144,25 +145,26 @@
             <h2>Kontaktformular</h2>
             <div class="input-name">
                 <label for="username">Name:</label>
-                <input type="text" name="username" placeholder="Max Mustermann" required>
+                <input type="text" id="username" name="username" placeholder="Max Mustermann" pattern="[A-Za-z]+" required>
             </div>
             
             <br>
 
             <div class="input-demand">
-                <label for="option">Anliegen:</label>
+                Anliegen:
                 <br>
-                <input type="radio" name="option" value="option1">
+                <br>
+                <input type="radio" id="option1" name="option" value="option1">
                 <label for="option1">Heilzauber</label><br>
 
-                <input type="radio" name="option" value="option2">
+                <input type="radio" id="option2" name="option" value="option2">
                 <label for="option2">Monsterbannen</label><br>
 
                 <div class="input-other">
-                    <input type="radio" name="option" value="option3">
+                    <input type="radio" id="option3" name="option" value="option3">
                     <label for="option3">Anderes:</label><br>
                 
-                    <input type="text" name="other" placeholder="Beschreibung">
+                    <input type="text" name="other" placeholder="Beschreibung"  pattern="[A-Za-z]+">
                 </div>
             </div>
 
