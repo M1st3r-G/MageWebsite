@@ -29,6 +29,10 @@ header {
             font-size: 3vw;
             color: #fff;
             text-decoration: none;
+
+            &:hover{
+                opacity: 0.5;
+            }
         }
     }
 
