@@ -399,6 +399,7 @@ header {
 
         input[type="text"] {
             background-color: rgba(92, 92, 92, 0.432); /* Hintergrundfarbe des Inputfeldes */
+            color: inherit;
             border: 1px solid #000000; /* Rand des Inputfeldes */
             padding: 8px; /* Innenabstand des Inputfeldes */
             border-radius: 4px; /* Abrundung der Ecken des Inputfeldes */
