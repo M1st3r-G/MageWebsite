@@ -9,8 +9,25 @@
 <style>
     body{
         text-align: center;
-        background-color: #111;
-    color: hsl(0, 0%, 100%);
+        background-color: #333;
+        color: hsl(0, 0%, 100%);
+        
+        font-family: 'Ditty';
+        font-size:x-large;
+
+        h1, h2{
+        font-family: 'Gotika Ornament', sans-serif;
+        }
+    }
+
+    @font-face {
+        font-family: 'Gotika Ornament';
+        src: url('css/Font/GothicaOrnament.otf') format("opentype"); /* Passe den Pfad entsprechend an */
+    }
+
+    @font-face {
+        font-family: 'Ditty';
+        src: url("css/Font/Ditty.ttf") format('truetype');
     }
 
     h1{
@@ -19,7 +36,7 @@
 
     a{
         text-decoration: none;
-        color: rgb(170, 170, 0);
+        color: rgb(124, 124, 0);
         transition: all 1s ease-in-out;
         text-shadow: 0 0 10px #e9ff22, 
                     0 0 20px #ecff43, 
@@ -46,7 +63,7 @@
 </style>
 
 <body>
-    <h1>You cannot Pass</h1>
+    <h1>You shall not Pass</h1>
     <img src="img/pass.png" alt="Lustigs Bild">
     <p>
         Sorry, but this Page has not yet been created. Please return to the <a href="index.html">main page</a>.
