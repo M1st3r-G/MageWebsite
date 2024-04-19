@@ -137,8 +137,40 @@
         <h2>Kontakt</h2>
         <p>
             Schickt mir gerne eine Eule oder eine Vision über meine Glaskugel. Andernfall stehen Sternbilder zwischen <span class="time">22.00</span> und <span class="time">6.00</span> Uhr zur verfügung.
-            Andernfall könnt ihr auch an meinem Turm vorbeischauen.
+            Andernfall könnt ihr auch an meinem Turm vorbeischauen. Falls es dringender ist, füllt doch gerne dieses Formular aus:
         </p>
+        <hr>
+        <form action="fallback.html">
+            <h2>Kontaktformular</h2>
+            <div class="input-name">
+                <label for="username">Name:</label>
+                <input type="text" name="username" placeholder="Max Mustermann" required>
+            </div>
+            
+            <br>
+
+            <div class="input-demand">
+                <label for="option">Anliegen:</label>
+                <br>
+                <input type="radio" name="option" value="option1">
+                <label for="option1">Heilzauber</label><br>
+
+                <input type="radio" name="option" value="option2">
+                <label for="option2">Monsterbannen</label><br>
+
+                <div class="input-other">
+                    <input type="radio" name="option" value="option3">
+                    <label for="option3">Anderes:</label><br>
+                
+                    <input type="text" name="other" placeholder="Beschreibung">
+                </div>
+            </div>
+
+            <br>
+            <div class="input-submit">
+                <button type="submit" name="absenden">Absenden</button>
+            </div>
+        </form>
     </div>
 
     <!--Footer mir Sozialen medien, Copyrigt, Impressund Datenschutz, etc-->
